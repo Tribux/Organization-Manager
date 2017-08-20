@@ -1,0 +1,8 @@
+{
+  "app": {
+    "short_description": "Manage organizations in bulk",
+    "long_description": "Select fields to update, pick organizations, enter values - update! It's that simple!",
+    "installation_instructions": "Follow on-screen instructions",
+    "name": "Organization Manager"
+  }
+}

@@ -1,0 +1,270 @@
+body {
+  font-size: 16px;
+}
+
+
+.chosen_organizations_list_div{
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  top: 30%;
+  left: 45%;
+  word-wrap: break-word;
+  text-overflow: clip;
+  overflow-y: auto;
+}
+
+#organization_fields_table_row {
+  position: absolute;
+  top: 12%;
+  text-align: center;
+  width: 100%;
+}
+
+#organization_fields_table{
+  text-align: center;
+
+}
+
+.displayed_organization_fields{
+  position: relative;
+  top: 12%;
+  display: inline-block;
+  border-radius: 10px;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+
+}
+
+
+.displayed_organization_fields:hover {
+  background-color: #dddddd;
+  color: #000000;
+}
+
+
+
+#load_organization_fields_button {
+  position: absolute;
+  top: 5%;
+  left: 47%;
+  width: auto;
+  height: 4%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: transparent;
+  border-color: white;
+  color: #777777;
+  border: 1px solid #ddd;
+}
+
+#load_organization_fields_button:hover, #reload_application:hover, #update_organizations_button:hover {
+  background-color: #bbbbbb;
+}
+
+#chooseFieldsInstructions {
+  position: absolute;
+  top: 8%;
+  left: 48%;
+  width: 12.5%;
+  height: 4%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2px;
+}
+
+#load_organizations_button {
+  visibility: hidden;
+  position: absolute;
+  top: 31.5%;
+  left: 2%;
+  width: 12.9%;
+  height: 4%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: transparent;
+  border-color: white;
+  color: #777777;
+  border: 1px solid #ddd;
+}
+
+#load_organizations_button:hover {
+  background-color: #bbbbbb;
+}
+
+#list_picked_organizations_title_paragraph{
+  visibility: hidden;
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  top: 28%;
+  left: 45%;
+
+}
+
+#previous_page_button, #next_page_button, #pick_all_orgs {
+  visibility: hidden;
+  position: absolute;
+  top: 33%;
+  left: 2%;
+  width: 9%;
+  height: 4%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: transparent;
+  border-color: white;
+  color: #777777;
+  border: 1px solid #ddd;
+}
+
+#previous_page_button:hover, #next_page_button:hover, #pick_all_orgs:hover {
+  background-color: #dddddd;
+  color: #000000;
+}
+
+#next_page_button {
+  left: 16%;
+}
+
+#pick_all_orgs {
+  left: 26%;
+  width: auto;
+}
+
+
+
+#step_two_tip_paragraph{
+  visibility: hidden;
+  position: absolute;
+  top: 28%;
+  left: 2%;
+  width: 33%;
+  height: 1%;
+  border-radius: 10px;
+  text-align: left;
+  background-color: transparent;
+  border-color: transparent;
+  color: #777777;
+}
+
+#list_organizations_by_name_table {
+  position: absolute;
+  top: 38%;
+  width: 23%;
+  left: 2%;
+  table-layout:fixed;
+}
+
+.listed_organizations_by_name {
+  top: 1%;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-top: 5px solid black;
+  width: 1%;
+  text-align: left;
+}
+
+.listed_organizations_by_name:hover {
+  background-color: #dddddd;
+  color: #000000;
+}
+
+
+
+#confirm_picked_fields_and_organizations_button{
+  visibility: hidden;
+  position: absolute;
+  top: 92%;
+  left: 80%;
+  width: 16%;
+  height: 4%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: transparent;
+  border-color: white;
+  color: #777777;
+  border: 1px solid #ddd;
+}
+
+#confirm_picked_fields_and_organizations_button:hover {
+  background-color: #dddddd;
+  color: #000000;
+}
+
+#input_field_values_popup_div{
+  overflow: auto;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  visibility: hidden;
+  word-wrap: normal;
+  text-align: left;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#input_field_values_popup_div p{
+  padding-top: 1%;
+  padding-bottom: 2%;
+  padding-left: 25%;
+  /*  display: inline-block; */
+  width: 80%;
+}
+
+#field_is_for_edit_title > input, #field_is_for_edit_title > textarea, #fieldForEditTitle > select, #fieldForEditTitle > option {
+  width: 100%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 1%;
+  text-align: justify;
+
+}
+
+#fieldForEditTitle > select:hover {
+  border-color: #5794bf;
+}
+
+#update_organizations_button{
+  position: fixed;
+  right: 2%;
+  bottom: 1%;
+  border: 1px solid #ddd;
+  border-top: 5px solid black;
+  border-radius: 5px;
+  background-color: transparent;
+  border-color: white;
+  color: #777777;
+  border: 1px solid #ddd;
+}
+
+#reload_application {
+  position: fixed;
+  right: 2%;
+  top: 1%;
+  border: 1px solid #ddd;
+  border-top: 5px solid black;
+  border-radius: 5px;
+  background-color: transparent;
+  border-color: white;
+  color: #777777;
+  border: 1px solid #ddd;
+  z-index: 100;
+}
+
+
+#update_organizations_button:hover, #reload_application:hover,  {
+  background-color: #dddddd;
+  color: #000000;
+}
+
+.ui-button > button, .ui-corner-all > button, .ui-widget > button, .ui-button-icon-only > button, .ui-dialog-titlebar-close > button{
+  display: none;
+}
+
+#tatus_progress_p{
+ top: 50%;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Organization Manager",
+  "author": {
+    "name": "Dino Hrgetic",
+    "email": "dino.hrgetic@outlook.com",
+    "url": "https://about.me/dino.hrgetic"
+  },
+  "defaultLocale": "en",
+  "private": false,
+  "location": {
+    "support": {
+      "nav_bar": "assets/iframe.html"
+    }
+  },
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}

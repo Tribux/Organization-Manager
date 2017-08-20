@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- http://garden.zendesk.com -->
+
+  <link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/1.0/zendesk_garden.css" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="jqueryui.css">
+
+</head>
+  <body id="body_id">
+    <input type="button" id="reload_application" value="Reload application">
+
+    <div id="page_one_separator">
+    <input type="button" id = "load_organization_fields_button" class="u-gamma" value ="Load organization fields"></input>
+    <input type="button" id = "previous_page_button" class="u-gamma" value ="Previous"></input>
+    <input type="button" id = "next_page_button" class="u-gamma" value ="Next"></input>
+    <input type="button" name="Pick all orgs" value="Pick all organizations" class="u-gamma" id="pick_all_orgs">
+
+      <div id="organization_fields_table">
+        <p id="organization_fields_table_row">
+
+        </p>
+      </div>
+
+
+    <p id="step_two_tip_paragraph" class= "u-thin" >Once fields are chosen, load and pick organizations to edit</p>
+    <input type="button" id = "load_organizations_button" class="u-gamma" value ="Load organizatios"></input>
+    <table id="list_organizations_by_name_table">
+      <tr id="list_organizations_by_name_table_row">
+
+      </tr>
+    </table>
+
+    <p class="u-thin" id="list_picked_organizations_title_paragraph">Picked organizations: </p>
+    <div class ="chosen_organizations_list_div">
+      <p id="display_picked_organizations_paragraph" ></p>
+    </div>
+
+    <input type="button" id="confirm_picked_fields_and_organizations_button" value="Continue to edit" clas="u-gamma">
+
+  </div>
+  <div id="page_two_separator">
+
+    <div id="input_field_values_popup_div">
+      <input type="button" id="update_organizations_button" value="Update organizations">
+    </div>
+
+
+    <div class="status_progress_div" title="Job report">
+      <p id="status_progress_p" title="Job report"></p>
+    </div>
+  </div>
+
+  </body>
+
+  <!-- https://github.com/zendesk/zendesk_app_framework_sdk -->
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script type="text/javascript" src="functions.js"></script>
+
+    </html>
