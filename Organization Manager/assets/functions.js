@@ -47,7 +47,7 @@ document.getElementById("confirm_picked_fields_and_organizations_button").addEve
     }
     else {
       console.log(my_g_chosen_organizations_array.length + " ++ " + my_g_all_organizations + " ++ " + my_g_fields_for_editing_by_name.length);
-      document.getElementById( "status_progress_p" ).innerHTML="Both, organization fields and organizations, have to be selected";
+      document.getElementById( "status_progress_p" ).textContent ="Both, organization fields and organizations, have to be selected";
       $( "#status_progress_p" ).dialog({
         closeOnEscape: false,
         draggable: false,
@@ -71,7 +71,7 @@ document.getElementById("confirm_picked_fields_and_organizations_button").addEve
     }
     else {
       console.log(my_g_chosen_organizations_array.length + " ++ " + my_g_all_organizations + " ++ " + my_g_fields_for_editing_by_name.length);
-      document.getElementById( "status_progress_p" ).innerHTML="Both, organization fields and organizations, have to be selected";
+      document.getElementById( "status_progress_p" ).textContent="Both, organization fields and organizations, have to be selected";
       $( "#status_progress_p" ).dialog({
         closeOnEscape: false,
         draggable: false,
@@ -87,7 +87,7 @@ document.getElementById("confirm_picked_fields_and_organizations_button").addEve
   }
   else {
     console.log(my_g_chosen_organizations_array.length + " ++ " + my_g_all_organizations + " ++ " + my_g_fields_for_editing_by_name.length);
-    document.getElementById( "status_progress_p" ).innerHTML="Both, organization fields and organizations, have to be selected";
+    document.getElementById( "status_progress_p" ).textContent ="Both, organization fields and organizations, have to be selected";
     $( "#status_progress_p" ).dialog({
       closeOnEscape: false,
       draggable: false,
@@ -104,7 +104,7 @@ document.getElementById("confirm_picked_fields_and_organizations_button").addEve
 
 document.getElementById("update_organizations_button").addEventListener("click", function(){
 
-  document.getElementById("status_progress_p").innerHTML = "Updating... Do not close/reload the page";
+  document.getElementById("status_progress_p").textContent = "Updating... Do not close/reload the page";
 
   $( function() {
     $( "#status_progress_p" ).dialog({
@@ -169,7 +169,7 @@ var my_job_reports_details = [];
 
 
 function setRequestParameters(requestURL, method, dataObj){
-  document.getElementById("status_progress_p").innerHTML = "Loading...";
+  document.getElementById("status_progress_p").textContent = "Loading...";
   $( function() {
     $( "#status_progress_p" ).dialog({
       closeOnEscape: false,
@@ -241,7 +241,7 @@ function displayOrganizationFields(organization_fields_data){
       var row = document.getElementById("organization_fields_table_row");
       var my_element = document.createElement("p");
       var cell1 = row.appendChild(my_element);
-      cell1.innerHTML = organization_fields_data.organization_fields[i].title;
+      cell1.textContent = organization_fields_data.organization_fields[i].title;
       cell1.setAttribute('data-c_zendesk_key', organization_fields_data.organization_fields[i].key);
       cell1.setAttribute('class', "displayed_organization_fields");
       cell1.setAttribute('onClick', "organizationFieldCellClick(this)");
@@ -321,7 +321,7 @@ function displayOrganizations(organizationsData){
     var row = document.getElementById("list_organizations_by_name_table_row");
     var cell1 = table.insertRow(0);
 
-    cell1.innerHTML = organizationsData.organizations[i].name;
+    cell1.textContent = organizationsData.organizations[i].name;
     cell1.setAttribute('class', "listed_organizations_by_name");
     cell1.setAttribute('id', organizationsData.organizations[i].id);
     cell1.setAttribute('onClick', "checkIfOrganizationIsAlreadyChosen(this)");
@@ -351,11 +351,11 @@ function checkIfOrganizationIsAlreadyChosen(organization_by_name_data){
   };
   if (counter_for_push == 0){
     my_g_chosen_organizations_array.push(organization_by_name_data.id);
-    my_g_chosen_organizations_names_array.push(organization_by_name_data.innerHTML);
+    my_g_chosen_organizations_names_array.push(organization_by_name_data.textContent);
     organization_by_name_data.style.backgroundColor = "#dddddd";
     document.getElementById("confirm_picked_fields_and_organizations_button").style.visibility = "visible";
   };
-  document.getElementById("display_picked_organizations_paragraph").innerHTML = my_g_chosen_organizations_names_array;
+  document.getElementById("display_picked_organizations_paragraph").textContent = my_g_chosen_organizations_names_array;
 };
 
 function loadNextPage(){
@@ -476,7 +476,7 @@ function highlightIfOrganizationChosen(displayed_organizations){
 //Open PopUp page for value input
 function openInputValuesOverlay(){
   document.getElementById("input_field_values_popup_div").style.visibility = "visible";
-  document.getElementById("page_one_separator").innerHTML = ".";
+  document.getElementById("page_one_separator").textContent = ".";
 };
 
 
@@ -599,7 +599,7 @@ function getOrganizationFieldsChosenForEdit(){
             createDropDownOptions.setAttribute('id', appData.config.organization_fields_data.organization_fields[y].custom_field_options[k].value);
             createDropDownOptions.setAttribute('class', 'c-menu__item');
             createDropDownOptions.setAttribute('value', appData.config.organization_fields_data.organization_fields[y].custom_field_options[k].value);
-            createDropDownOptions.innerHTML = appData.config.organization_fields_data.organization_fields[y].custom_field_options[k].name;
+            createDropDownOptions.textContent = appData.config.organization_fields_data.organization_fields[y].custom_field_options[k].name;
             createDropDownSelect.append(createDropDownOptions);
           };
           createDropDownSelect.setAttribute('id', appData.config.organization_fields_data.organization_fields[y].key);
@@ -683,7 +683,7 @@ function performUpdate(jsonArrTemp){
 
   setTimeout(function(){
 
-    document.getElementById("status_progress_p").innerHTML = "Updating organizations... Batches remaining: " + Math.ceil(my_g_chosen_organizations_array.length/100 + "\n Error logs: ") ;
+    document.getElementById("status_progress_p").textContent = "Updating organizations... Batches remaining: " + Math.ceil(my_g_chosen_organizations_array.length/100 + "\n Error logs: ") ;
     $( function() {
       $( "#status_progress_p" ).dialog({
         closeOnEscape: false,
@@ -712,7 +712,7 @@ function performUpdate(jsonArrTemp){
 
             var p_data = JSON.parse(data2);
             if ( p_data.job_status.results != null && p_data.job_status.results.length > 0) {
-              document.getElementById("status_progress_p").innerHTML = " ";
+              document.getElementById("status_progress_p").textContent = " ";
               for (var i = 0; i < p_data.job_status.results.length; i++) {
                 var node = document.createElement("LI");                 // Create a <li> node
                 var textnode = document.createTextNode("Error [" + p_data.job_status.results[i].id + "]: " + p_data.job_status.results[i].error + " - " + p_data.job_status.results[i].details);         // Create a text node
@@ -769,7 +769,7 @@ function performUpdate(jsonArrTemp){
         );
       };
 
-      document.getElementById("status_progress_p").innerHTML = my_job_reports_details;
+      document.getElementById("status_progress_p").textContent = my_job_reports_details;
       $( function() {
         $( "#status_progress_p" ).dialog({
           closeOnEscape: false,
@@ -788,19 +788,19 @@ function performUpdate(jsonArrTemp){
     function pickAllOrganizations(){
       if (my_g_all_organizations == false) {
         my_g_all_organizations = true;
-        document.getElementById("display_picked_organizations_paragraph").innerHTML = "All organizations";
+        document.getElementById("display_picked_organizations_paragraph").textContent = "All organizations";
         document.getElementById("pick_all_orgs").style.backgroundColor = "#dddddd";
 
       }
       else {
         if (my_g_chosen_organizations_names_array.length > 0) {
-          document.getElementById("display_picked_organizations_paragraph").innerHTML = my_g_chosen_organizations_names_array;
+          document.getElementById("display_picked_organizations_paragraph").textContent = my_g_chosen_organizations_names_array;
           my_g_all_organizations = false;
           document.getElementById("pick_all_orgs").style.backgroundColor = "transparent";
 
         }
         else {
-          document.getElementById("display_picked_organizations_paragraph").innerHTML = "";
+          document.getElementById("display_picked_organizations_paragraph").textContent = "";
           my_g_all_organizations = false;
           document.getElementById("pick_all_orgs").style.backgroundColor = "transparent";
         }
